@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
-import WatchList from './components/WatchList';
-import WatchedList from './components/WatchedList';
-import MovieDetails from './components/MovieDetails';
-import NavBar from './components/NavBar';
+import Home from './componentsStarter/Home';
+import WatchList from './componentsStarter/WatchList';
+import WatchedList from './componentsStarter/WatchedList';
+import MovieDetails from './componentsStarter/MovieDetails';
+import NavBar from './componentsStarter/NavBar';
 import './App.css';
 
 const API_KEY = process.env.React_App_MOVIE_API_KEY;
@@ -17,17 +17,7 @@ const App = () => {
   const [filteredMovies, setFilteredMovies] = useState([]);
 
   useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        const response = await fetch(`${API_URL}/popular?api_key=${API_KEY}`);
-        const data = await response.json();
-        setMovies(data.results);
-      } catch (error) {
-        console.error('Error fetching movies:', error);
-      }
-    };
-
-    fetchMovies();
+    // Fetch movie data here
   }, []);
 
   useEffect(() => {
@@ -35,28 +25,15 @@ const App = () => {
   }, [movies]);
 
   const addToWatchList = (movie) => {
-    const isDuplicate = watchList.some((item) => item.id === movie.id);
-    if(!isDuplicate){
-      setWatchList([...watchList, movie]);
-    }else{
-      console.log("This movie is already in the watch list")
-    }
+    // Handle add movie to watch list  
   };
 
   const addToWatchedList = (movie) => {
-    setWatchedList([...watchedList, movie]);
-    setWatchList(watchList.filter(m => m.id !== movie.id));
+    // Handle add movie from watch list to watched list
   };
 
   const handleSearch = (query) => {
-    if (!query) {
-      setFilteredMovies(movies);
-    } else {
-      const filtered = movies.filter(movie => 
-        movie.title.toLowerCase().includes(query.toLowerCase())
-      );
-      setFilteredMovies(filtered);
-    }
+    // Handle search function here
   };
 
   return (

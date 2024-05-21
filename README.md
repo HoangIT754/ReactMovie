@@ -1,3 +1,56 @@
+# Movie App
+This is a React application for managing and viewing a collection of movies. The application includes various components such as a home page, movie details page, lists of movies to watch, and movies that have been watched. This is a movie app built using React that utilizes the API provided by [The Movie Database (TMDb)](https://www.themoviedb.org/).
+
+## Installation
+
+To get started with the project, follow these steps:
+
+1. Create a new React project using `create-react-app`:
+
+### `npx create-react-app movie-app`
+
+2. Navigate to the project directory:
+
+### `cd movie-app`
+
+3. Install the required dependencies:
+
+### `npm install react-router-dom`
+
+4. Obtain an API key from [TMDb](https://www.themoviedb.org/documentation/api) by creating an account and generating an API key.
+
+5. Create a `.env` file in the root directory of the project and add your API key:
+
+### `React_App_MOVIE_API_KEY=your_api_key_here`
+
+## Features
+
+- **Home:** Displays a list of popular movies fetched from the TMDb API. Each movie card includes the movie title, poster, and overview.
+  
+- **Watchlist:** Allows users to add movies to their watchlist. Displays the movies added to the watchlist. Users can remove movies from the watchlist.
+  
+- **WatchedList:** Allows users to mark movies as watched. Displays the movies marked as watched. Users can remove movies from the watched list.
+  
+- **Search:** Provides a search input in the navigation bar. Users can search for movies by title. Displays search results in real-time as the user types.
+
+## Technologies Used
+
+- React
+- React Router (for routing)
+- Styled Components (for styling)
+- dotenv (for environment variables)
+
+### Components
+
+- **Home.js**: This is the main landing page of the application.
+- **MovieDetails.js**: This component displays the details of a selected movie.
+- **MovieList.js**: This component lists all the movies.
+- **NavBar.js**: This component represents the navigation bar.
+- **SearchBar.js**: This component provides a search bar to find movies.
+- **WatchedList.js**: This component lists all the movies that have been watched.
+- **WatchList.js**: This component lists all the movies that the user intends to watch.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
